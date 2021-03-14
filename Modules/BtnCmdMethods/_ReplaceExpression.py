@@ -7,7 +7,8 @@ def ReplaceExpr(self,Expr):
         "cos(":"Cos[",
         "tan(":"Tan[",
         "log(":"Log[",    
-        "factorial(":"Factorial["
+        "factorial(":"Factorial[",
+        "Ans":"%"
     }
     WolfExpr = Expr
     for ReplacedText in WolfExprCorres:
