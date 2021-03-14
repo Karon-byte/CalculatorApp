@@ -1,10 +1,9 @@
-#from wolframclient.evaluation import WolframLanguageSession
-#from wolframclient.language import wl,wlexpr
-#from wolframclient.language.exceptions import WolframLanguageException
+from wolframclient.evaluation import WolframLanguageSession
+from wolframclient.language import wl,wlexpr
 
 def EvalWolf(self,Expr):
     Expr = 'N[' + Expr + ']'
-    print(Expr)
-    """with WolframLanguageSession("/usr/bin/wolfram") as session:
-        CalResult = session.evaluate(wlexpr(Expr))
-    return str(CalResult)"""
+    session = WolframLanguageSession("/usr/bin/wolfram")
+    CalResult = session.evaluate(wlexpr(Expr))
+    session.terminate()
+    return str(CalResult)
